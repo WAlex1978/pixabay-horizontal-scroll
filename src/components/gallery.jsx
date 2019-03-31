@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
-import GridListTileBar from '@material-ui/core/GridListTileBar';
 import Dialog from '@material-ui/core/Dialog';
 
 class Gallery extends Component {
@@ -33,7 +32,7 @@ class Gallery extends Component {
                         </GridListTile>
                     ))}
                 </GridList>
-                <Dialog open={this.state.open} onClose={this.handleClose}>
+                <Dialog open={this.state.open} onClose={this.handleClose} fullWidth='true' maxWidth='md'>
                     <img src={this.state.selectedImage} alt="" style={{ width: '100%' }} />
                 </Dialog>
             </div>

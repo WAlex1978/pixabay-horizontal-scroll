@@ -13,6 +13,12 @@ class SearchBar extends Component {
         images: [],
     }
 
+    async componentDidMount () {
+        this.setState({images: await Search(this.state.value)});
+        this.props.return(this.state.value, this.state.images);
+    }
+    
+
     handleChange = event => {
         this.setState({value: event.target.value});
     }
