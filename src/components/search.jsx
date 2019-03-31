@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Gallery from './gallery';
 import Axios from 'axios';
 
 class Search extends Component {
@@ -21,12 +22,16 @@ class Search extends Component {
             .catch(err => console.log(err))
 
         this.setState({value: ''});
+        console.log("asdf")
     }
 
     render() { 
         return (
             <div>
-                <input type="text" name="search" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" name="search" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                </form>
+                {this.state.images.length > 0 ? (<Gallery images={this.state.images} />): null}
             </div>
         );
     }
