@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card from 'material-ui/Card';
 import './gallery.css';
 
 class Gallery extends Component {
@@ -9,7 +8,8 @@ class Gallery extends Component {
 
         return (
             <div className="container">
-                    {images.map(img => (<Card key={img.id}><img src={img.largeImageURL} /></Card>))}
+                {console.log(images)}
+                {images.map(img => (<img className='img-slider' src={img.largeImageURL} alt=''/>))}
             </div>
         );
     }

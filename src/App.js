@@ -5,11 +5,20 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 
 class App extends Component {
+  state = {
+    images: [],
+  }
+
+  getImages = images => {
+    this.setState({images: images});
+  }
+
   render() {
     return (
       <div>
         <MuiThemeProvider>
-          <Search />
+          <Search search={this.getImages} />
+          {this.state.images.length > 0 ? (<Gallery images={this.state.images} />): null}
         </MuiThemeProvider>
       </div>
     );
