@@ -6,11 +6,10 @@ async function Search(props) {
     var apiKey = '12027914-00b10473d10ee790f2812000c';
     var images = [];
 
-    var res = await Axios.get(`${apiUrl}/?key=${apiKey}&q=${value}&image_type=photo&per_page=30`);
+    var res = await Axios.get(`${apiUrl}/?key=${apiKey}&q=${value}&image_type=photo%order=latest&per_page=40`);
     images = res.data.hits;
 
-    console.log(images);
-
+    console.log(images)
     return images;
 }
  

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Search from './Search';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class SearchBar extends Component {
 
     state = {
         value: '',
+        images: [],
     }
 
     handleChange = event => {
@@ -18,7 +20,8 @@ class SearchBar extends Component {
     async handleSubmit(event) {
         event.preventDefault();
 
-        this.props.search(this.state.value);
+        this.setState({images: await Search(this.state.value)});
+        this.props.return(this.state.value, this.state.images);
         this.setState({value: ''});
     }
 
