@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import Dialog from '@material-ui/core/Dialog';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 class Gallery extends Component {
     state = {
@@ -25,10 +26,11 @@ class Gallery extends Component {
 
         return (
             <div className='container'>
-                <GridList cellHeight={240} cols={3} spacing={10} >
+                <GridList cellHeight={240} cols={3}>
                     {images.map(img => (
                         <GridListTile key={img.id}>
-                            <img style={{cursor: 'pointer'}} src={img.largeImageURL} alt='' onClick={() => this.handleEnlarge(img.largeImageURL)}/>
+                            <LazyLoadImage alt='' style={{cursor: 'pointer'}} width='100%' src={img.largeImageURL} 
+                                onClick={() => this.handleEnlarge(img.largeImageURL)}/>
                         </GridListTile>
                     ))}
                 </GridList>
