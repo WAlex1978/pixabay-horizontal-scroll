@@ -25,14 +25,14 @@ class Gallery extends Component {
 
         return (
             <div className='container'>
-                <GridList className='gridList' cellHeight={240} cols={3} spacing={10}>
+                <GridList cellHeight={240} cols={3} spacing={10} >
                     {images.map(img => (
                         <GridListTile key={img.id}>
-                            <img src={img.largeImageURL} alt='' onClick={() => this.handleEnlarge(img.largeImageURL)}/>
+                            <img style={{cursor: 'pointer'}} src={img.largeImageURL} alt='' onClick={() => this.handleEnlarge(img.largeImageURL)}/>
                         </GridListTile>
                     ))}
                 </GridList>
-                <Dialog open={this.state.open} onClose={this.handleClose} fullWidth='true' maxWidth='md'>
+                <Dialog open={this.state.open} onClose={this.handleClose} fullWidth={true} maxWidth='md'>
                     <img src={this.state.selectedImage} alt="" style={{ width: '100%' }} />
                 </Dialog>
             </div>
