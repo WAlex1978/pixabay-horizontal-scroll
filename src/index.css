@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    padding: 5px;
+    margin: 0 0 20px 0;
+    height: 40vh;
+    background: url(./components/images/banner.jpg);
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+.paper {
+    display: flex;
+    height: 50px;
+    width: 60vw;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon {
+    padding: 10px;
+    opacity: .5;
+}
+
+.input {
+    padding: 3px;
+    width: 100%;
+}

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import Search from './Search';
+import Paper from '@material-ui/core/Paper';
+import InputBase from '@material-ui/core/InputBase';
+import SearchIcon from '@material-ui/icons/Search';
 
 class SearchBar extends Component {
     constructor(props) {
@@ -33,9 +36,12 @@ class SearchBar extends Component {
 
     render() { 
         return (
-            <div>
+            <div className='header'>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" name="search" placeholder="Search" value={this.state.value} onChange={this.handleChange} />
+                    <Paper className='paper' elevation={1}>
+                        <SearchIcon className='icon' />
+                        <InputBase className='input' placeholder="Image Search" value={this.state.value} onChange={this.handleChange} />
+                    </Paper>
                 </form>
             </div>
         );
